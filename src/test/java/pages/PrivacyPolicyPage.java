@@ -1,24 +1,18 @@
 package pages;
 
-import constants.Setup;
 import constants.TestDataConstants;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 /**
  * Created by poppy.zhang on 2018/9/11.
  */
-public class UserProtocolPage extends PageObject {
+public class PrivacyPolicyPage extends PageObject {
     CommonPage commonPage = new CommonPage();
     MainPage mainPage = new MainPage();
     String finalVersion = null;
@@ -83,24 +77,18 @@ public class UserProtocolPage extends PageObject {
     WebElement userProtocolTitle;
 
 
-
-
-
-
-
-    public String getNewestProtocolVersion() throws Exception {
+    public String getNewestPolicyVersion() throws Exception {
         if (mainPage.appBasicManagement != null) {
             mainPage.appBasicManagement.click();
-            mainPage.userProtocol.click();
+            mainPage.privacyPolicy.click();
             commonPage.wait(getDriver(), 2);
             String latestVersionChina = currentVersion.getText();
             String[] splitStr = latestVersionChina.split("\\.");
             int newVersion = Integer.parseInt(splitStr[1].toString());
             int version = newVersion + 1;
-            if(String.valueOf(newVersion).length()==1) {
-                finalVersion = splitStr[0] + "." +"0"+ String.valueOf(version);
-            }
-            else{
+            if (String.valueOf(newVersion).length() == 1) {
+                finalVersion = splitStr[0] + "." + "0" + String.valueOf(version);
+            } else {
                 finalVersion = splitStr[0] + "." + String.valueOf(version);
             }
             System.out.println("New version will be: " + finalVersion);
@@ -108,7 +96,7 @@ public class UserProtocolPage extends PageObject {
         return finalVersion;
     }
 
-    public void addUserProtocol() throws Exception {
+    public void addPrivacyPolicy() throws Exception {
         addBtn.click();
         currentUrl = getDriver().getCurrentUrl();
         commonPage.wait(getDriver(), 2);
@@ -123,12 +111,10 @@ public class UserProtocolPage extends PageObject {
         userConfirmYes.click();
         saveBtn.click();
         commonPage.wait(getDriver(), 2);
-        //Alert alert = getAlert();
-        //alert.accept();
-        if (saveProtocolAlertInfo.getText().equals("保存用户协议成功！")) {
-            System.out.println("Save user protocol succeed, tese pass!");
+        if (saveProtocolAlertInfo.getText().equals("保存隐私政策成功！")) {
+            System.out.println("Save privacy policy succeed, tese pass!");
         } else
-            Assert.fail("Save user protocol get error, tese fail!");
+            Assert.fail("Save privacy policy get error, tese fail!");
         alertConfirmBtn.click();
         commonPage.wait(getDriver(), 2);
         //add language version
@@ -149,22 +135,22 @@ public class UserProtocolPage extends PageObject {
         languageAlertConfirmBtn.click();
     }
 
-    public void pulishUserProtocol() throws Exception {
+    public void pulishPrivacyPolicy() throws Exception {
         publishBtn.click();
         commonPage.wait(getDriver(), 2);
         publishAlertConfirmBtn.click();
         if (publishAlertContent.getText().equals("发布成功！")) {
-            System.out.println("Publish user protocol succeed, test pass!");
+            System.out.println("Publish privacy policy succeed, test pass!");
         } else
-            Assert.fail("Publish user protocol get error, test fail!");
+            Assert.fail("Publish privacy policy get error, test fail!");
         publishAlertConfirmBtn1.click();
         getDriver().quit();
     }
 
-    public void searchUserProtocol() throws Exception {
+    public void searchPrivacyPolicy() throws Exception {
         if (mainPage.appBasicManagement != null) {
             mainPage.appBasicManagement.click();
-            mainPage.userProtocol.click();
+            mainPage.privacyPolicy.click();
             commonPage.wait(getDriver(), 2);
             countryDropdown.click();
             Actions actions = new Actions(getDriver());
@@ -182,7 +168,7 @@ public class UserProtocolPage extends PageObject {
         }
     }
 
-    public void viewProtocol() throws Exception {
+    public void viewPrivacyPolicy() throws Exception {
         viewBtn.click();
         commonPage.wait(getDriver(), 2);
         detailInfoBtn.click();
@@ -192,9 +178,10 @@ public class UserProtocolPage extends PageObject {
             System.out.println("View protocol function works well, test pass!");
         } else
             Assert.fail("View protocol function does not work well, test fail!");
+        getDriver().quit();
     }
 
-    public void editProtocol() throws Exception {
+    public void editPrivacyPolicy() throws Exception {
         editProtocolBtn.click();
         commonPage.wait(getDriver(), 2);
         languageTitle.clear();
@@ -211,18 +198,17 @@ public class UserProtocolPage extends PageObject {
         commonPage.wait(getDriver(), 2);
         detailInfoBtn2.click();
         commonPage.wait(getDriver(), 2);
-        if(userProtocolTitle.getText().contains(TestDataConstants.testInfo1)){
-            System.out.println("Edit protocol title succeed, test pass!");
-        }
-        else
-            Assert.fail("Edit protocol title get error, test fail!");
+        if (userProtocolTitle.getText().contains(TestDataConstants.testInfo1)) {
+            System.out.println("Edit privacy policy title succeed, test pass!");
+        } else
+            Assert.fail("Edit privacy policy title get error, test fail!");
         getDriver().switchTo().frame(languageRichTextboxIframe);
         commonPage.wait(getDriver(), 2);
-        if(languageContent.getText().contains(TestDataConstants.testInfo1)){
-            System.out.println("Edit protocol content succeed, test pass!");
-        }
-        else
-            Assert.fail("Edit protocol content get error, test fail!");
+        if (languageContent.getText().contains(TestDataConstants.testInfo1)) {
+            System.out.println("Edit privacy policy content succeed, test pass!");
+        } else
+            Assert.fail("Edit privacy policy content get error, test fail!");
+        getDriver().quit();
     }
 
 

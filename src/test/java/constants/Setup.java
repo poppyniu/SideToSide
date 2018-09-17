@@ -38,11 +38,11 @@ public class Setup {
             capabilities.setCapability("deviceName", "Nexus 6P");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("platformVersion", "6.0.1");
-            //capabilities.setCapability("udid", "84B7N15A20002666");
-            capabilities.setCapability("udid", "353479090139386");
+            capabilities.setCapability("udid", "84B7N15A20002666");
+            //capabilities.setCapability("udid", "353479090139386");
             capabilities.setCapability("app", app.getAbsolutePath());
-//            capabilities.setCapability("appPackage","com.eco.global.app");
-//            capabilities.setCapability("appActivity","com.eco.main.activity.EcoMainActivity");
+            //capabilities.setCapability("appPackage","com.eco.global.app");
+            //capabilities.setCapability("appActivity","com.eco.main.activity.EcoMainActivity");
             capabilities.setCapability("unicodeKeyboard", "True");
             capabilities.setCapability("resetKeyboard", "True");
             capabilities.setCapability("noSign", "True");

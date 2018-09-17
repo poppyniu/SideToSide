@@ -27,5 +27,17 @@ public class LoginSteps {
         loginPage.checkLoginSucceed();
     }
 
+    @Step
+    public void invalid_login1() throws Exception {
+        loginPage.invalidlogin1();
+    }
+
+    @Step
+    public void invalid_login2() throws Exception {
+        loginPage.invalidlogin2();
+    }
+
+
+
 
 }

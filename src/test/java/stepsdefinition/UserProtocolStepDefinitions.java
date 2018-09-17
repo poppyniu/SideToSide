@@ -27,4 +27,23 @@ public class UserProtocolStepDefinitions {
         userProtocolSteps.publish_new_user_protocol();
     }
 
+    @And("^Search user protocol and check search result$")
+    public void search_user_protocol_and_check_result() throws Throwable {
+        userProtocolSteps.search_user_protocol();
+    }
+
+    @And("^View detailed info for a protocol$")
+    public void view_protocol() throws Throwable {
+        userProtocolSteps.view_protocol();
+    }
+
+    @And("^Eit a new user protocol and verify result$")
+    public void edit_protocol() throws Throwable {
+        userProtocolSteps.edit_protocol();
+    }
+
+
+
+
+
 }

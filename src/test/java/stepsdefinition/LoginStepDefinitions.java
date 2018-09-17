@@ -27,4 +27,15 @@ public class LoginStepDefinitions {
         loginSteps.check_login_succeed();
     }
 
+    @When("^Input nothing and click login button and check remind info$")
+    public void input_nothing_and_click_login_button() throws Throwable {
+        loginSteps.invalid_login1();
+    }
+
+    @Then("^Input invalid name or password then click login button and check remind info$")
+    public void input_wrong_account_and_click_login_button() throws Throwable {
+        loginSteps.invalid_login2();
+    }
+
+
 }

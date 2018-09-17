@@ -18,4 +18,9 @@ public class MobileStepDefinitions {
         mobileSteps.verify_protocol_on_mobile(platform);
     }
 
+    @And("^Login to (.*) mobile to verify privacy policy is effective$")
+    public void login_to_android_mobile_to_privacy_policy_is_effective(String platform) throws Throwable {
+        mobileSteps.verify_policy_on_mobile(platform);
+    }
+
 }

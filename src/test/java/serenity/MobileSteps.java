@@ -44,4 +44,30 @@ public class MobileSteps {
         mobilePage.protocolMobilePageBackBtn.click();
         mobilePage.protocolMobilePageAgreeBtn.click();
     }
+
+    @Step
+    public void verify_policy_on_mobile(String platform) throws Exception {
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
+        if (platform.equals("ios")) {
+            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+        } else {
+            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/agreement_agree"), 60, platform);
+            Thread.sleep(5000);
+        }
+        appiumDriver.tap(1, 550, 1021, 100);
+        Thread.sleep(2000);
+        if (platform.equals("ios")) {
+            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+        } else {
+            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/actionbar_title"), 60, platform);
+            Thread.sleep(5000);
+        }
+        if (mobilePage.protocolMobilePageTitle.getText().equals(TestDataConstants.testInfo)) {
+            System.out.println("Config privacy policy to mobile succed, test pass!");
+        } else
+            Assert.fail("Config privacy policy to mobile get error, test fail!");
+        mobilePage.protocolMobilePageBackBtn.click();
+        mobilePage.protocolMobilePageAgreeBtn.click();
+    }
+
 }

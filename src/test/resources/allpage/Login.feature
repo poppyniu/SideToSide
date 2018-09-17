@@ -8,3 +8,9 @@ Feature:Test function on login page
     Examples:
       | name       | password |
       | linfeng.ma | Eco@2018 |
+
+  @InvalidLogin
+  Scenario: Test invalid login for china user
+    Given  Open china area login page
+    And Input nothing and click login button and check remind info
+    And Input invalid name or password then click login button and check remind info

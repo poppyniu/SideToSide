@@ -5,4 +5,5 @@ package constants;
  */
 public class TestDataConstants {
     public static String testInfo="testpoppy";
+    public static String testInfo1="edit";
 }

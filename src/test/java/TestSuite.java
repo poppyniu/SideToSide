@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         format = {"pretty", "html:target/html/"},
         features = {"src/test/resources" },
-       tags = {"@Protocol"}
+       tags = {"@InvalidLogin"}
 )
 public class TestSuite {
 }

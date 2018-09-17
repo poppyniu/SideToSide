@@ -34,5 +34,21 @@ public class UserProtocolSteps {
         userProtocolPage.pulishUserProtocol();
     }
 
+    @Step
+    public void search_user_protocol() throws Exception {
+        userProtocolPage.searchUserProtocol();
+    }
+
+    @Step
+    public void view_protocol() throws Exception {
+        userProtocolPage.viewProtocol();
+    }
+
+    @Step
+    public void edit_protocol() throws Exception {
+        userProtocolPage.editProtocol();
+    }
+
+
 
 }
