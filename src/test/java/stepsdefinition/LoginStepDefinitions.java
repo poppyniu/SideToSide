@@ -12,9 +12,9 @@ public class LoginStepDefinitions {
     @Steps
     LoginSteps loginSteps ;
 
-    @Given("^Open china area login page$")
-    public void open_china_area_login_page() throws Throwable {
-        loginSteps.open_login_page();
+    @Given("^Open ([^\"]*) area login page$")
+    public void open_china_area_login_page(String country) throws Throwable {
+        loginSteps.open_login_page(country);
     }
 
     @When("^Input valid user ([^\"]*) and ([^\"]*) and click login button$")

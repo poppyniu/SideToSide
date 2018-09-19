@@ -13,8 +13,8 @@ public class LoginSteps {
     LoginPage loginPage;
 
     @Step
-    public void open_login_page() {
-        loginPage.open();
+    public void open_login_page(String country)throws Exception {
+        loginPage.openPage(country);
     }
 
     @Step

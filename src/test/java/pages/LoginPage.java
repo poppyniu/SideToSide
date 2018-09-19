@@ -29,6 +29,19 @@ public class LoginPage extends PageObject {
     WebElement invalidLoginTip2;
 
 
+    public void openPage(String country) throws Exception {
+        if (country.equals("中国")) {
+            getDriver().get(TestDataConstants.chinaLoginUrl);
+        } else if (country.equals("美国")) {
+            getDriver().get(TestDataConstants.americaLoginUrl);
+        } else if (country.equals("德国")) {
+            getDriver().get(TestDataConstants.germanyLoginUrl);
+        } else if (country.equals("新加坡")) {
+            getDriver().get(TestDataConstants.singaporeLoginUrl);
+        }
+        commonPage.wait(getDriver(), 2);
+    }
+
     public void validLogin(String name, String password) throws Exception {
         getDriver().manage().window().maximize();
         userNameTextbox.clear();

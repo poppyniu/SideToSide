@@ -17,10 +17,10 @@ public class MainPage extends PageObject{
     @FindBy(xpath = "//*[@id='navbar-container']/nav/ul/li[1]/ul/li[2]/a")
     WebElement privacyPolicy;
     @FindBy(xpath = "//*[@id='navbar-container']/nav/ul/li[1]/ul/li[3]/a")
-    WebElement appVersioncManagement;
+    WebElement appVersionManagement;
     @FindBy(xpath = "//*[@id='navbar-container']/nav/ul/li[1]/ul/li[4]/aa")
     WebElement mailTemplate;
-    @FindBy(xpath = "//*[@id='navbar-container']/nav/ul/li[1]/ul/li[5]/aa")
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[1]/ul/li[5]/a")
     WebElement configureManagement;
     @FindBy(xpath = "//*[@id='sidebar']/div[1]/div[1]/div/ul/li/ul/li[2]/a")
     WebElement privacyPolicySideBar;
