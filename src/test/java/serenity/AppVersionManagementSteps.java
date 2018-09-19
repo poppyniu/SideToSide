@@ -27,6 +27,12 @@ public class AppVersionManagementSteps {
         appVersionManagementPage.addInstallFileAndPublish();
     }
 
+    @Step
+    public void setUpgradeToNo() throws Exception {
+        appVersionManagementPage.setUpgradeToNo();
+    }
+
+
 
 
 }

@@ -66,7 +66,16 @@ public class AppVersionManagementPage extends PageObject {
     WebElement publishSucceedInfo;
     @FindBy(xpath = "/html/body/div[6]/div[3]/div/button/span")
     WebElement sureBtn2;
-
+    @FindBy(xpath = "//*[@id=\"appVersionTb\"]/tbody/tr[1]/td[11]/a")
+    WebElement detailBtn2;
+    @FindBy(xpath = "//*[@id=\"data_form\"]/div[1]/div/div[5]/label[3]/a")
+    WebElement cancelUpgradeBtn;
+    @FindBy(xpath = "/html/body/div[4]/div[3]/div/button[1]/span")
+    WebElement sureBtn3;
+    @FindBy(xpath = "//*[@id=\"jAlert\"]/p")
+    WebElement alertInfo;
+    @FindBy(xpath = "/html/body/div[5]/div[3]/div/button/span")
+    WebElement sureBtn4;
 
 
 
@@ -140,6 +149,22 @@ public class AppVersionManagementPage extends PageObject {
         else{
             Assert.fail("Publish new app version get error, test fail!");
         }
+    }
+
+    public void setUpgradeToNo() throws Exception {
+        detailBtn2.click();
+        commonPage.wait(getDriver(), 2);
+        cancelUpgradeBtn.click();
+        commonPage.wait(getDriver(), 1);
+        sureBtn3.click();
+        commonPage.wait(getDriver(), 1);
+        if(alertInfo.getText().equals("修改成功！")){
+            System.out.println("Cancel remind upgrade succeed, test pass!");
+            sureBtn4.click();
+        }else{
+            Assert.fail("Cancel remind upgrade get error, test fail!");
+        }
+        getDriver().close();
     }
 
 

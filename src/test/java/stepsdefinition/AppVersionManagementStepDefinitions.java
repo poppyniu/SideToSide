@@ -28,5 +28,11 @@ public class AppVersionManagementStepDefinitions {
         appVersionManagementSteps.addInstallFileAndPublish();
     }
 
+    @And("^Go back to website to set remind upgrade to no$")
+    public void set_remind_upgrade_to_no() throws Throwable {
+        appVersionManagementSteps.setUpgradeToNo();
+    }
+
+
 
 }
