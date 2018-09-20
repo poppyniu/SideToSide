@@ -55,7 +55,10 @@ public class MobilePage {
     public MobileElement xiaonengText;
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'取消')]")
     public MobileElement xiaonengCancelBtn;
-
+    @AndroidFindBy(id = "com.eco.global.app:id/ad_content")
+    public MobileElement adContent;
+    @AndroidFindBy(id = "com.eco.global.app:id/adview_time")
+    public MobileElement skipBtn;
 
 
 

@@ -76,17 +76,17 @@ public class MobileSteps {
     public void verify_protocol_on_mobile(String platform) throws Exception {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
         if (platform.equals("ios")) {
-            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
         } else {
-            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/agreement_agree"), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/agreement_agree"), 60, platform);
             Thread.sleep(5000);
         }
         appiumDriver.tap(1, 1113, 929, 100);
         Thread.sleep(2000);
         if (platform.equals("ios")) {
-            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
         } else {
-            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/actionbar_title"), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/actionbar_title"), 60, platform);
             Thread.sleep(5000);
         }
         if (mobilePage.protocolMobilePageTitle.getText().equals(TestDataConstants.testInfo)) {
@@ -101,17 +101,17 @@ public class MobileSteps {
     public void verify_policy_on_mobile(String platform) throws Exception {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
         if (platform.equals("ios")) {
-            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
         } else {
-            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/agreement_agree"), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/agreement_agree"), 60, platform);
             Thread.sleep(5000);
         }
         appiumDriver.tap(1, 550, 1021, 100);
         Thread.sleep(2000);
         if (platform.equals("ios")) {
-            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
         } else {
-            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/actionbar_title"), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/actionbar_title"), 60, platform);
             Thread.sleep(5000);
         }
         if (mobilePage.protocolMobilePageTitle.getText().equals(TestDataConstants.testInfo)) {
@@ -137,9 +137,9 @@ public class MobileSteps {
     public void verifyXiaoneng(String platform) throws Exception {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
         if (platform.equals("ios")) {
-            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
         } else {
-            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/actionbar_left"), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/actionbar_left"), 60, platform);
             Thread.sleep(5000);
         }
         mobilePage.actionBarLeft.click();
@@ -155,6 +155,37 @@ public class MobileSteps {
         mobilePage.xiaonengCancelBtn.click();
 
     }
+
+    @Step
+    public void verifyAdvertisement(String platform) throws Exception {
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
+        if (platform.equals("ios")) {
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
+        } else {
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/ad_content"), 60, platform);
+            Thread.sleep(5000);
+        }
+        mobilePage.adContent.click();
+        Thread.sleep(2000);
+        if (mobilePage.onlineCustom.isDisplayed()) {
+            System.out.println("Config advisement to mobile succeed, test pass!");
+        } else
+            Assert.fail("Config advisement to mobile get error, test fail!");
+    }
+
+    @Step
+    public void verifyBootLogo(String platform) throws Exception {
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
+        if (platform.equals("ios")) {
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
+            System.out.println("Config boot logo to mobile succeed, test pass!");
+        } else {
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/adview_time"), 60, platform);
+            System.out.println("Config boot logo to mobile succeed, test pass!");
+            Thread.sleep(5000);
+        }
+    }
+
 
     private boolean elementExist(MobileElement element)
             throws Exception {

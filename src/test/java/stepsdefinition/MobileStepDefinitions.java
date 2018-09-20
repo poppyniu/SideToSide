@@ -43,5 +43,13 @@ public class MobileStepDefinitions {
         mobileSteps.verifyXiaoneng(platform);
     }
 
+    @And("^Login to (.*) mobile to verify advertisement is effective$")
+    public void login_to_android_mobile_to_verify_advertisement_is_effective(String platform) throws Throwable {
+        mobileSteps.verifyAdvertisement(platform);
+    }
 
+    @And("^Login to (.*) mobile to verify boot logo is effective$")
+    public void login_to_android_mobile_to_verify_boot_logo_is_effective(String platform) throws Throwable {
+        mobileSteps.verifyBootLogo(platform);
+    }
 }

@@ -30,8 +30,17 @@ public class MainPage extends PageObject{
     WebElement mailTemplateSideBar;
     @FindBy(xpath = "//*[@id='sidebar']/div[1]/div[1]/div/ul/li/ul/li[5]/a")
     WebElement configureManagementSideBar;
-    @FindBy(xpath = "/html/body/div[2]/div")
-    WebElement content;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/a")
+    WebElement contentManagement;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/ul/li[1]/a")
+    WebElement adManagement;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/ul/li[2]/a")
+    WebElement bootLogo;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/ul/li[3]/a")
+    WebElement contactService;
+
+
+
 
 
 }
