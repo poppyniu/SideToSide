@@ -186,6 +186,32 @@ public class MobileSteps {
         }
     }
 
+    @Step
+    public void verifyCustomService(String platform) throws Exception {
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
+        if (platform.equals("ios")) {
+            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
+        } else {
+            CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/error_view"), 60, platform);
+            Thread.sleep(5000);
+        }
+        mobilePage.actionBarLeft.click();
+        Thread.sleep(2000);
+        mobilePage.helpFeedback.click();
+        Thread.sleep(2000);
+        mobilePage.hotLine.click();
+        Thread.sleep(3000);
+        if (mobilePage.telephoneNum.getText().equals(TestDataConstants.telephoneNumber)) {
+            System.out.println("Config custom service to mobile succeed, test pass!");
+        } else
+            Assert.fail("Config custom service to mobile get error, test pass!");
+        if (platform.equals("ios")) {
+            //click cancel btn
+        } else {
+            appiumDriver.tap(1, 487, 1371, 100);
+        }
+    }
+
 
     private boolean elementExist(MobileElement element)
             throws Exception {

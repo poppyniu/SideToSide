@@ -52,4 +52,9 @@ public class MobileStepDefinitions {
     public void login_to_android_mobile_to_verify_boot_logo_is_effective(String platform) throws Throwable {
         mobileSteps.verifyBootLogo(platform);
     }
+
+    @And("^Login to (.*) mobile to verify custom service is effective$")
+    public void login_to_android_mobile_to_verify_custom_service_is_effective(String platform) throws Throwable {
+        mobileSteps.verifyCustomService(platform);
+    }
 }

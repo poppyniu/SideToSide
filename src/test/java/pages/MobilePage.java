@@ -59,7 +59,10 @@ public class MobilePage {
     public MobileElement adContent;
     @AndroidFindBy(id = "com.eco.global.app:id/adview_time")
     public MobileElement skipBtn;
-
+    @AndroidFindBy(id = "com.eco.global.app:id/phone_service")
+    public MobileElement hotLine;
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'18616915369')]")
+    public MobileElement telephoneNum;
 
 
     public MobilePage(AppiumDriver driver)

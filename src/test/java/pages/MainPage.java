@@ -39,8 +39,4 @@ public class MainPage extends PageObject{
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/ul/li[3]/a")
     WebElement contactService;
 
-
-
-
-
 }
