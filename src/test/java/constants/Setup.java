@@ -26,7 +26,7 @@ public class Setup {
             capabilities.setCapability("automationName", "xcuitest");
             capabilities.setCapability("autoAcceptAlerts", "True");
             capabilities.setCapability("newCommandTimeout", 300);
-            capabilities.setCapability("noReset", "False");
+            capabilities.setCapability("noReset", "True");
             appiumDriver = new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
             return appiumDriver;
         } else {

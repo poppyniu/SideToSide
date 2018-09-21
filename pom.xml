@@ -131,7 +131,7 @@
                     <!--<forkCount>2</forkCount>-->
                     <argLine>-Xmx512m</argLine>
                     <systemPropertyVariables>
-                        <testdata>${project.basedir}\src\test\resources\test.jpg</testdata>
+                        <testdata>${project.basedir}\file\test.jpg</testdata>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>

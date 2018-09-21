@@ -225,7 +225,7 @@ public class CommonPage extends PageObject {
     }
 
     //use below function to wait mobile element
-    public static void waitForVisible(AppiumDriver driver, String xpath, int waitTime, String platform) {
+    public static void waitMobileElementVisible(AppiumDriver driver, String xpath, int waitTime, String platform) {
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         for (int attempt = 0; attempt < waitTime; attempt++) {
             try {
@@ -247,4 +247,5 @@ public class CommonPage extends PageObject {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(xpath)));
         }
     }
+
 }

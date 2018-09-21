@@ -15,5 +15,7 @@ public class TestDataConstants {
     public static String upgradeInfoChinese="你有新的app版本";
     public static String upgradeInfoEnglish="new app version available";
     public static String installUrl="http://";
+    public static String testEmail="test@126.com";
+    public static String telephoneNumber="18616915369";
 
 }
