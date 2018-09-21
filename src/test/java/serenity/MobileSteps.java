@@ -216,14 +216,14 @@ public class MobileSteps {
     public void verifyaddmessagepush(String platform) throws Exception {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
         if (platform.equals("ios")) {
-            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[2]"), 60, platform);
         } else {
             CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/error_view"), 60, platform);
         }
         mobilePage.iconBtn.click();
         mobilePage.rl_push_msgBtn.click();
         if (platform.equals("ios")) {
-            CommonPage.waitMobileElementVisible(appiumDriver, (""), 60, platform);
+            CommonPage.waitMobileElementVisible(appiumDriver, ("//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeTable[1]/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[1]"), 60, platform);
         } else {
             CommonPage.waitMobileElementVisible(appiumDriver, ("com.eco.global.app:id/ll_message"), 60, platform);
         }
