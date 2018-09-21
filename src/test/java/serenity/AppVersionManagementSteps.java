@@ -18,8 +18,8 @@ public class AppVersionManagementSteps {
     }
 
     @Step
-    public void addAppVersion() throws Exception {
-        appVersionManagementPage.addAppVersion();
+    public void addAppVersion(String platform) throws Exception {
+        appVersionManagementPage.addAppVersion(platform);
     }
 
     @Step

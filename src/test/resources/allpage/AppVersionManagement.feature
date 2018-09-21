@@ -6,7 +6,7 @@ Feature:Test function on app version management page
     When Input valid user <name> and <password> and click login button
     Then User login to system succeed
     And Get current newest app version for <platform>
-    And Add a new app version and verify result
+    And Add a new app version and verify result for <platform>
     And Add install file set remind upgrade to yes and publish to mobile side
     And Set up testing environment on <platform>
 #    And Choose <country> as login country on <platform>

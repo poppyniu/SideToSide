@@ -76,6 +76,9 @@ public class AppVersionManagementPage extends PageObject {
     WebElement alertInfo;
     @FindBy(xpath = "/html/body/div[5]/div[3]/div/button/span")
     WebElement sureBtn4;
+    @FindBy(xpath = "//*[@id=\"data_form\"]/div[1]/div/div[1]/div/select")
+    WebElement appNameDropdown1;
+
 
 
 
@@ -111,9 +114,15 @@ public class AppVersionManagementPage extends PageObject {
         return finalVersion;
     }
 
-    public void addAppVersion() throws Exception {
+    public void addAppVersion(String platform) throws Exception {
         addAppBtn.click();
         commonPage.wait(getDriver(), 2);
+        if(platform.equals("ios")){
+            appNameDropdown1.click();
+            Actions actions = new Actions(getDriver());
+            actions.sendKeys(Keys.DOWN).perform();
+            actions.sendKeys(Keys.ENTER).perform();
+        }
         appVersionTextbox.sendKeys(finalVersion);
         upgradeInfoChinese.sendKeys(TestDataConstants.upgradeInfoChinese);
         upgradeInfoEnglish.sendKeys(TestDataConstants.upgradeInfoEnglish);

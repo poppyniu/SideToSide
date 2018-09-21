@@ -18,9 +18,9 @@ public class AppVersionManagementStepDefinitions {
         appVersionManagementSteps.getVersionForPlatform(platform);
     }
 
-    @And("^Add a new app version and verify result$")
-    public void add_a_new_app_version_and_verify_result() throws Throwable {
-        appVersionManagementSteps.addAppVersion();
+    @And("^Add a new app version and verify result for (.*)$")
+    public void add_a_new_app_version_and_verify_result(String platform) throws Throwable {
+        appVersionManagementSteps.addAppVersion(platform);
     }
 
     @And("^Add install file set remind upgrade to yes and publish to mobile side$")
