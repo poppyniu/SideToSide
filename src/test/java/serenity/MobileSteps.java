@@ -211,6 +211,7 @@ public class MobileSteps {
             appiumDriver.tap(1, 487, 1371, 100);
         }
     }
+
     @Step
     public void verifyaddmessagepush(String platform) throws Exception {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
@@ -228,7 +229,6 @@ public class MobileSteps {
         }
         mobilePage.ll_messageBtn.click();
     }
-
     private boolean elementExist(MobileElement element)
             throws Exception {
         boolean elementExist = element.isDisplayed();
