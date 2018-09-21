@@ -57,6 +57,14 @@ public class MobilePage {
     public MobileElement xiaonengCancelBtn;
 
 
+    @AndroidFindBy(id = "android:id/icon")
+    public MobileElement iconBtn;
+
+    @AndroidFindBy(id = "com.eco.global.app:id/rl_push_msg")
+    public MobileElement rl_push_msgBtn;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'test')]")
+    public MobileElement ll_messageBtn;
 
 
     public MobilePage(AppiumDriver driver)

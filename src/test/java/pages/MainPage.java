@@ -33,5 +33,16 @@ public class MainPage extends PageObject{
     @FindBy(xpath = "/html/body/div[2]/div")
     WebElement content;
 
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[3]/a")
+    WebElement userControl;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[3]/ul/li/a")
+    WebElement userQuery;
+
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/a")
+    WebElement messageManagement;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/ul/li[1]/a")
+    WebElement messagePush;
+    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/ul/li[2]/a")
+    WebElement messageHistory;
 
 }

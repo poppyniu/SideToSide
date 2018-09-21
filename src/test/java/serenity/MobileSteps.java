@@ -155,7 +155,24 @@ public class MobileSteps {
         mobilePage.xiaonengCancelBtn.click();
 
     }
+    @Step
+    public void verifyaddmessagepush(String platform) throws Exception{
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, 10, SECONDS), MobilePage.class);
+        if (platform.equals("ios")) {
+            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+        } else {
+            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/error_view"), 60, platform);
+        }
+        mobilePage.iconBtn.click();
+        mobilePage.rl_push_msgBtn.click();
+        if (platform.equals("ios")) {
+            CommonPage.waitForVisible(appiumDriver, (""), 60, platform);
+        } else {
+            CommonPage.waitForVisible(appiumDriver, ("com.eco.global.app:id/ll_message"), 60, platform);
+        }
+        mobilePage.ll_messageBtn.click();
 
+    }
     private boolean elementExist(MobileElement element)
             throws Exception {
         boolean elementExist = element.isDisplayed();

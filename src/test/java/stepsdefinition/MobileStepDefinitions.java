@@ -42,6 +42,11 @@ public class MobileStepDefinitions {
     public void login_to_android_mobile_to_verify_xiao_neng_working_time_is_effective(String platform) throws Throwable {
         mobileSteps.verifyXiaoneng(platform);
     }
+    //verifyaddmessagepush
+    @And("^Login to (.*) mobile to verify add message push$")
+    public void verifyaddmessagepush(String platform) throws Throwable {
+        mobileSteps.verifyaddmessagepush(platform);
+    }
 
 
 }
