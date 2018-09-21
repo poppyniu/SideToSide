@@ -32,16 +32,6 @@ public class MainPage extends PageObject{
     WebElement configureManagementSideBar;
     @FindBy(xpath = "/html/body/div[2]/div")
     WebElement content;
-    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[3]/a")
-    WebElement userControl;
-    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[3]/ul/li/a")
-    WebElement userQuery;
-    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/a")
-    WebElement messageManagement;
-    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/ul/li[1]/a")
-    WebElement messagePush;
-    @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/ul/li[2]/a")
-    WebElement messageHistory;
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/a")
     WebElement contentManagement;
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/ul/li[1]/a")
@@ -50,12 +40,10 @@ public class MainPage extends PageObject{
     WebElement bootLogo;
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[2]/ul/li[3]/a")
     WebElement contactService;
-
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[3]/a")
     WebElement userControl;
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[3]/ul/li/a")
     WebElement userQuery;
-
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/a")
     WebElement messageManagement;
     @FindBy(xpath = "//*[@id=\"navbar-container\"]/nav/ul/li[4]/ul/li[1]/a")
