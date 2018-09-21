@@ -97,7 +97,7 @@ public class UserProtocolPage extends PageObject {
             String[] splitStr = latestVersionChina.split("\\.");
             int newVersion = Integer.parseInt(splitStr[1].toString());
             int version = newVersion + 1;
-            if(String.valueOf(newVersion).length()==1) {
+            if(String.valueOf(newVersion).length()==1&&String.valueOf(newVersion)=="9") {
                 finalVersion = splitStr[0] + "." +"0"+ String.valueOf(version);
             }
             else{
@@ -122,7 +122,7 @@ public class UserProtocolPage extends PageObject {
         versionNumberTextbox.sendKeys(finalVersion);
         userConfirmYes.click();
         saveBtn.click();
-        commonPage.wait(getDriver(), 2);
+        commonPage.wait(getDriver(), 3);
         //Alert alert = getAlert();
         //alert.accept();
         if (saveProtocolAlertInfo.getText().equals("保存用户协议成功！")) {
